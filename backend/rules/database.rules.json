@@ -1,0 +1,28 @@
+{
+  "rules": {
+    "nodes": {
+      "$nodeId": {
+        ".read":  "auth != null",
+        ".write": "auth != null && (auth.uid == $nodeId || auth.token.admin == true)"
+      }
+    },
+    "history": {
+      "$nodeId": {
+        ".read":  "auth != null",
+        ".write": "auth != null"
+      }
+    },
+    "alerts": {
+      "active": {
+        ".read":  "auth != null",
+        ".write": "auth != null"
+      }
+    },
+    "sensors": {
+      "$nodeId": {
+        ".read":  "auth != null",
+        ".write": "auth != null"
+      }
+    }
+  }
+}
